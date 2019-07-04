@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.ColorInput?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1366.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_QuanLySachController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <JFXTabPane onMouseClicked="#change_click" prefHeight="670.0" prefWidth="1366.0">
+         <tabs>
+            <Tab text="Sách">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="655.0" prefWidth="1366.0">
+                           <left>
+                              <VBox prefHeight="514.0" prefWidth="100.0" spacing="30.0" styleClass="borderpane" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <JFXButton alignment="BOTTOM_CENTER" contentDisplay="TOP" onAction="#addbook_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Thêm sách" textFill="BLUE">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/AddBook_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="updatebook" alignment="BOTTOM_CENTER" contentDisplay="TOP" disable="true" layoutX="10.0" layoutY="10.0" onAction="#updatebook_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Sửa sách" textFill="BLUE">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/UpdateBook_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="deletebook" alignment="BOTTOM_CENTER" contentDisplay="TOP" disable="true" layoutX="10.0" layoutY="95.0" onAction="#deletebook_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Xóa sách" textFill="BLUE">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/DeleteBook_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="180.0" onAction="#importbook_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Nhập sách" textFill="BLUE">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/ImportBook_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <ColorInput />
+                                       </effect>
+                                    </JFXButton>
+                                    <JFXButton alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="265.0" onAction="#exportbook_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Xuất sách" textFill="BLUE">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/ExportBook_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                                 <padding>
+                                    <Insets top="30.0" />
+                                 </padding>
+                              </VBox>
+                           </left>
+                           <right>
+                              <VBox prefHeight="655.0" prefWidth="160.0" spacing="10.0" styleClass="borderpane" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <ImageView fx:id="bookimage" fitHeight="200.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label text="Tên sách" textFill="#0e12ee">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="nametext" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Tác giả" textFill="#0e12ee">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="authortext" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Mô tả" textFill="#0e12ee">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="decriptext" layoutX="10.0" layoutY="281.0" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </VBox>
+                           </right>
+                           <center>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <top>
+                                    <Label styleClass="lablebook" text="THÔNG TIN SÁCH" textFill="BLUE" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </top>
+                                 <bottom>
+                                    <JFXTreeTableView fx:id="booktable" onKeyPressed="#booktable_keypress" prefHeight="560.0" prefWidth="1100.0" BorderPane.alignment="CENTER" />
+                                 </bottom>
+                                 <center>
+                                    <HBox prefHeight="36.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: #5649a3;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label styleClass="lablebook" text="Tìm kiếm" textFill="#f7f7f8">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets right="20.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="searchname" labelFloat="true" prefHeight="33.0" prefWidth="175.0" promptText="Tên sách" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="17.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <JFXTextField fx:id="searchkind" labelFloat="true" prefHeight="33.0" prefWidth="184.0" promptText="Thể loại" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="17.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <JFXTextField fx:id="searchauthor" labelFloat="true" prefHeight="33.0" prefWidth="172.0" promptText="Tác giả" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="17.0" />
+                                             </font>
+                                          </JFXTextField>
+                                       </children>
+                                       <padding>
+                                          <Insets left="190.0" right="190.0" top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </center>
+                              </BorderPane>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Thông tin sách">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" prefHeight="655.0" prefWidth="1366.0">
+                           <items>
+                              <Pane prefHeight="653.0" prefWidth="327.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.5" prefHeight="655.0" prefWidth="679.0">
+                                       <items>
+                                          <Pane prefHeight="653.0" prefWidth="336.0" style="-fx-background-color: #5649a3;">
+                                             <children>
+                                                <Label layoutX="115.0" layoutY="14.0" styleClass="lablebook" text="THỂ LOẠI" textFill="#f7f7f8" />
+                                                <JFXTreeTableView fx:id="kindtable" layoutY="100.0" prefHeight="449.0" prefWidth="335.0" />
+                                                <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="570.0" onAction="#addkind_click" prefHeight="40.0" prefWidth="80.0" styleClass="addbutton" text=" " textFill="BLUE">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/add_30x30.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </JFXButton>
+                                                <JFXButton fx:id="updatekind" contentDisplay="CENTER" disable="true" layoutX="128.0" layoutY="570.0" onAction="#updatekind_click" prefHeight="40.0" prefWidth="80.0" styleClass="updatebutton" text=" " textFill="BLUE">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/update_50x50.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </JFXButton>
+                                                <JFXButton fx:id="deletekind" contentDisplay="CENTER" disable="true" layoutX="242.0" layoutY="570.0" onAction="#deletekind_click" prefHeight="40.0" prefWidth="80.0" styleClass="deletebutton" text=" " textFill="BLUE">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/delete_30x30.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </JFXButton>
+                                                <JFXTextField fx:id="searchnamekind" labelFloat="true" layoutX="100.0" layoutY="56.0" prefHeight="28.0" prefWidth="136.0" promptText="Tên thể loại" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                                   <font>
+                                                      <Font name="Tahoma Bold" size="18.0" />
+                                                   </font>
+                                                </JFXTextField>
+                                             </children>
+                                          </Pane>
+                                          <Pane prefHeight="653.0" prefWidth="335.0" style="-fx-background-color: #5649a3;">
+                                             <children>
+                                                <Label layoutX="120.0" layoutY="14.0" styleClass="lablebook" text="TÁC GIẢ" textFill="#f7f7f8" />
+                                                <JFXTreeTableView fx:id="authortable" layoutY="100.0" prefHeight="449.0" prefWidth="335.0" />
+                                                <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="570.0" onAction="#addauthor_click" prefHeight="40.0" prefWidth="80.0" styleClass="addbutton" text=" " textFill="BLUE">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/add_30x30.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </JFXButton>
+                                                <JFXButton fx:id="updateauthor" contentDisplay="CENTER" disable="true" layoutX="127.0" layoutY="570.0" onAction="#updateauthor_click" prefHeight="40.0" prefWidth="80.0" styleClass="updatebutton" text=" " textFill="BLUE">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/update_50x50.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </JFXButton>
+                                                <JFXButton fx:id="deleteauthor" contentDisplay="CENTER" disable="true" layoutX="242.0" layoutY="570.0" onAction="#deleteauthor_click" prefHeight="40.0" prefWidth="80.0" styleClass="deletebutton" text=" " textFill="BLUE">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Image/delete_30x30.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </JFXButton>
+                                                <JFXTextField fx:id="searchnameauthor" labelFloat="true" layoutX="100.0" layoutY="56.0" prefHeight="28.0" prefWidth="136.0" promptText="Tên tác giả" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                                   <font>
+                                                      <Font name="Tahoma Bold" size="18.0" />
+                                                   </font>
+                                                </JFXTextField>
+                                             </children>
+                                          </Pane>
+                                       </items>
+                                    </SplitPane>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="653.0" prefWidth="679.0" style="-fx-background-color: #5649a3;">
+                                 <children>
+                                    <Label layoutX="275.0" layoutY="14.0" styleClass="lablebook" text="NHÀ XUẤT BẢN" textFill="#f7f7f8" />
+                                    <JFXTreeTableView fx:id="publishtable" layoutY="100.0" prefHeight="448.0" prefWidth="679.0" />
+                                    <JFXButton contentDisplay="CENTER" layoutX="179.0" layoutY="570.0" onAction="#addpublish_click" prefHeight="40.0" prefWidth="80.0" styleClass="addbutton" text=" " textFill="BLUE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/add_30x30.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="updatepublish" contentDisplay="CENTER" disable="true" layoutX="301.0" layoutY="570.0" onAction="#updatepublish_click" prefHeight="40.0" prefWidth="80.0" styleClass="updatebutton" text=" " textFill="BLUE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/update_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="deletepublish" contentDisplay="CENTER" disable="true" layoutX="421.0" layoutY="570.0" onAction="#deletepublish_click" prefHeight="40.0" prefWidth="80.0" styleClass="deletebutton" text=" " textFill="BLUE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/delete_30x30.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXTextField fx:id="searchnamepublish" labelFloat="true" layoutX="139.0" layoutY="56.0" prefHeight="28.0" prefWidth="136.0" promptText="Nhà xuất bản" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="searchaddress" labelFloat="true" layoutX="299.0" layoutY="56.0" prefHeight="28.0" prefWidth="136.0" promptText="Địa chỉ" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="searchphone" labelFloat="true" layoutX="458.0" layoutY="56.0" prefHeight="28.0" prefWidth="136.0" promptText="Số điện thoại" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                              </Pane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

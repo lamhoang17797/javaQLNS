@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="432.0" prefWidth="410.0" style="-fx-background-color: #BFF7C6;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_InUpPublishController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="43.0" layoutY="14.0" styleClass="lablebook" text="THÔNG TIN NHÀ XUẤT BẢN" textFill="#3434cb" />
+      <JFXTextField fx:id="idpublish" editable="false" labelFloat="true" layoutX="135.0" layoutY="72.0" prefHeight="28.0" prefWidth="141.0" AnchorPane.leftAnchor="135.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="namepublish" labelFloat="true" layoutX="135.0" layoutY="121.0" prefHeight="28.0" prefWidth="238.0" AnchorPane.leftAnchor="135.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="addresspublish" labelFloat="true" layoutX="135.0" layoutY="172.0" prefHeight="28.0" prefWidth="238.0" AnchorPane.leftAnchor="135.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="emailpublish" labelFloat="true" layoutX="135.0" layoutY="225.0" prefHeight="28.0" prefWidth="238.0" AnchorPane.leftAnchor="135.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="phonepublish" labelFloat="true" layoutX="135.0" layoutY="278.0" onKeyPressed="#phonepublish_keypress" prefHeight="28.0" prefWidth="141.0" AnchorPane.leftAnchor="135.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="43.0" layoutY="77.0" text="Mã NXB:" textFill="#3434cb" AnchorPane.leftAnchor="43.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="126.0" text="Tên NXB:" textFill="#3434cb" AnchorPane.leftAnchor="43.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="177.0" text="Địa chỉ:" textFill="#3434cb" AnchorPane.leftAnchor="43.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="230.0" text="Email:" textFill="#3434cb" AnchorPane.leftAnchor="43.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="283.0" text="Điện thoại:" textFill="#3434cb" AnchorPane.leftAnchor="43.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton contentDisplay="CENTER" layoutX="170.0" layoutY="348.0" onAction="#save_click" prefHeight="34.0" prefWidth="70.0" styleClass="addbutton" text=" ">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/Save.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="CENTER" layoutX="90.0" layoutY="348.0" onAction="#delete_click" prefHeight="34.0" prefWidth="70.0" styleClass="deletebutton" text=" ">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/Recycle_30x30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="CENTER" layoutX="250.0" layoutY="348.0" onAction="#close_click" prefHeight="34.0" prefWidth="70.0" styleClass="updatebutton" text=" ">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/X.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label fx:id="phonepublishvalidation" layoutX="135.0" layoutY="319.0" prefHeight="17.0" prefWidth="141.0" textFill="RED" />
+   </children>
+</AnchorPane>

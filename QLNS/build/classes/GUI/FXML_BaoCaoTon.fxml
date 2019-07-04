@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="654.0" prefWidth="1366.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_BaoCaoTonController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="255.0" layoutY="32.0" styleClass="lablebook" text="BÁO CÁO TỒN" textFill="BLUE" />
+      <JFXTreeTableView fx:id="reporttable" layoutX="39.0" layoutY="168.0" prefHeight="400.0" prefWidth="654.0" />
+      <Label layoutX="39.0" layoutY="109.0" styleClass="lablebook" text="Tháng:" />
+      <Label layoutX="289.0" layoutY="109.0" styleClass="lablebook" text="Năm:" />
+      <TextField fx:id="year" alignment="CENTER_RIGHT" layoutX="371.0" layoutY="106.0" prefHeight="42.0" prefWidth="101.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <JFXButton layoutX="536.0" layoutY="107.0" onAction="#create" prefHeight="39.0" prefWidth="147.0" ripplerFill="#f2434369" style="-fx-background-color: #322b59;" text="Tạo phiếu" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <ComboBox fx:id="month" layoutX="127.0" layoutY="106.0" prefHeight="42.0" prefWidth="101.0" />
+      <BorderPane fx:id="pane" layoutX="704.0" layoutY="68.0" prefHeight="500.0" prefWidth="654.0" />
+   </children>
+</AnchorPane>

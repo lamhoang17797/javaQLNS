@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorInput?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1366.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_PhieuNhapSachController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <JFXTabPane layoutX="-5.0" layoutY="1.0" onMouseClicked="#change_click" prefHeight="670.0" prefWidth="1366.0">
+         <tabs>
+            <Tab text="Phiếu nhập">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane prefHeight="297.0" prefWidth="778.0" style="-fx-background-color: #4AB3F5; -fx-border-width: 3; -fx-border-color: blue;">
+                           <opaqueInsets>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </opaqueInsets>
+                           <children>
+                              <Label layoutX="294.0" layoutY="14.0" prefHeight="17.0" prefWidth="166.0" text="PHIẾU NHẬP" textFill="#f7f7f8">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="63.0" text="Nhà cung cấp:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="377.0" layoutY="66.0" text="Ngày nhập:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton fx:id="createimport" layoutX="538.0" layoutY="123.0" onAction="#createimport_click" prefHeight="39.0" prefWidth="201.0" ripplerFill="#f2434369" style="-fx-background-color: #103AF7;" text="Tạo phiếu" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="savedetail" layoutX="539.0" layoutY="177.0" onAction="#savedetail_click" prefHeight="39.0" prefWidth="199.0" style="-fx-background-color: #103AF7;" text="Lưu" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="export" layoutX="540.0" layoutY="234.0" onAction="#export_click" prefHeight="39.0" prefWidth="197.0" style="-fx-background-color: #103AF7;" text="Xuất phiếu" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXTreeTableView fx:id="importtable" layoutX="23.0" layoutY="121.0" onMouseClicked="#importtable_click" prefHeight="151.0" prefWidth="497.0" />
+                              <JFXComboBox fx:id="supply" focusColor="#0040ff" layoutX="153.0" layoutY="64.0" onAction="#supply_click" prefHeight="25.0" prefWidth="174.0" style="-fx-text-inner-color: #ff33ff;" unFocusColor="RED" />
+                              <JFXDatePicker fx:id="day" defaultColor="#3fffec" layoutX="490.0" layoutY="66.0" prefHeight="28.0" prefWidth="209.0" />
+                              <JFXTextField fx:id="ncc" layoutX="153.0" layoutY="94.0" prefHeight="25.0" prefWidth="175.0" visible="false" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="306.0" prefHeight="320.0" prefWidth="778.0" style="-fx-background-color: #4AB3F5; -fx-border-width: 3; -fx-border-color: blue;">
+                           <children>
+                              <Label layoutX="253.0" layoutY="14.0" text="CHI TIẾT PHIẾU NHẬP" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="26.0" />
+                                 </font>
+                              </Label>
+                              <JFXTreeTableView fx:id="detailimporttable" disable="true" layoutX="-6.0" layoutY="54.0" onMouseClicked="#detailimporttable_click" prefHeight="260.0" prefWidth="778.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="804.0" layoutY="84.0" prefHeight="511.0" prefWidth="210.0" style="-fx-border-color: blue; -fx-border-width: 3;">
+                           <children>
+                              <Label layoutX="28.0" layoutY="34.0" text="Số lượng nhập">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="31.0" layoutY="145.0" text="Đơn giá">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton fx:id="addbook" disable="true" layoutX="28.0" layoutY="282.0" onAction="#addbook_click" prefHeight="39.0" prefWidth="151.0" style="-fx-background-color: #103AF7;" text="&lt;&lt;" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="updatedetail" disable="true" layoutX="27.0" layoutY="358.0" onAction="#updatedetail_click" prefHeight="39.0" prefWidth="153.0" style="-fx-background-color: #103AF7;" text="Sửa SLN" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="deletedetail" disable="true" layoutX="27.0" layoutY="439.0" onAction="#deletedetail_click" prefHeight="39.0" prefWidth="153.0" style="-fx-background-color: #103AF7;" text="Xóa CTPN" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <TextField fx:id="amountimport" alignment="CENTER_RIGHT" disable="true" layoutX="30.0" layoutY="78.0" prefHeight="25.0" prefWidth="154.0" text="0" />
+                              <TextField fx:id="price" alignment="CENTER_RIGHT" disable="true" layoutX="30.0" layoutY="179.0" prefHeight="25.0" prefWidth="154.0" text="0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="1035.0" prefHeight="617.0" prefWidth="331.0" style="-fx-background-color: #4AB3F5; -fx-border-color: blue; -fx-border-width: 3;">
+                           <children>
+                              <Label layoutX="64.0" layoutY="23.0" text="Thông Tin Sách" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="26.0" />
+                                 </font>
+                              </Label>
+                              <JFXTreeTableView fx:id="booktable" disable="true" layoutX="8.0" layoutY="61.0" onMouseClicked="#booktable_click" prefHeight="548.0" prefWidth="316.0" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="804.0" layoutY="39.0" styleClass="lablebook" text="Tổng tiền:" />
+                        <Label fx:id="sum" layoutX="925.0" layoutY="39.0" styleClass="lablebook" text=" " />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Nhà cung cấp">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="655.0" prefWidth="1366.0">
+                           <left>
+                              <VBox prefHeight="514.0" prefWidth="100.0" spacing="30.0" styleClass="borderpane" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <JFXButton alignment="BOTTOM_CENTER" contentDisplay="TOP" onAction="#addsupply_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Thêm NCC" textFill="BLUE">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/AddSupply_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="updatesupply" alignment="BOTTOM_CENTER" contentDisplay="TOP" disable="true" layoutX="10.0" layoutY="10.0" onAction="#updatesupply_click" prefHeight="85.0" prefWidth="94.0" styleClass="bookcolor" text="Sửa TT" textFill="BLUE">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/EditSupply_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="deletesupply" alignment="BOTTOM_CENTER" contentDisplay="TOP" disable="true" layoutX="10.0" layoutY="95.0" onAction="#deletesupply_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Xóa NCC" textFill="BLUE">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/DeleteSupply_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="180.0" onAction="#importsupply_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Nhập NCC" textFill="BLUE">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/ImportBook_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <ColorInput />
+                                       </effect>
+                                    </JFXButton>
+                                    <JFXButton alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="265.0" onAction="#exportsupply_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Xuất NCC" textFill="BLUE">
+                                       <graphic>
+                                          <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/ExportBook_50x50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Tahoma" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                                 <padding>
+                                    <Insets top="30.0" />
+                                 </padding>
+                              </VBox>
+                           </left>
+                           <right>
+                              <VBox prefHeight="655.0" prefWidth="160.0" spacing="10.0" styleClass="borderpane" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <ImageView fx:id="supplyimage" fitHeight="200.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label text="Tên nhà cung cấp" textFill="#0e12ee">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="nametext" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Địa chỉ " textFill="#0e12ee">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="addresstext" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Email" textFill="#0e12ee">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="emailtext" layoutX="10.0" layoutY="281.0" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Số điện thoại" textFill="#0e12ee">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="phonetext" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </VBox>
+                           </right>
+                           <center>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <top>
+                                    <Label styleClass="lablebook" text="THÔNG TIN NHÀ CUNG CẤP" textFill="BLUE" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </top>
+                                 <bottom>
+                                    <JFXTreeTableView fx:id="supplytable" onKeyPressed="#supplytable_keypress" onMouseClicked="#supplytable_click" prefHeight="560.0" prefWidth="1100.0" BorderPane.alignment="CENTER" />
+                                 </bottom>
+                                 <center>
+                                    <HBox prefHeight="36.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: #5649a3;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label styleClass="lablebook" text="Tìm kiếm" textFill="#f7f7f8">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets right="20.0" />
+                                             </padding>
+                                          </Label>
+                                          <JFXTextField fx:id="searchname" labelFloat="true" prefHeight="33.0" prefWidth="172.0" promptText="Tên nhà cung cấp" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="17.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <JFXTextField fx:id="searchaddress" labelFloat="true" prefHeight="33.0" prefWidth="191.0" promptText="Địa chỉ nhà cung cấp" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="17.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <JFXTextField fx:id="searchemail" labelFloat="true" prefHeight="33.0" prefWidth="164.0" promptText="email" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="17.0" />
+                                             </font>
+                                          </JFXTextField>
+                                       </children>
+                                       <padding>
+                                          <Insets left="190.0" right="190.0" top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </center>
+                              </BorderPane>
+                           </center>
+                        </BorderPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="535.0" prefWidth="500.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_InUpSachController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <SplitPane dividerPositions="0.46904315196998125" orientation="VERTICAL" prefHeight="535.0" prefWidth="500.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #BFF7C6;">
+               <children>
+                  <JFXTextField fx:id="idbook" editable="false" labelFloat="true" layoutX="21.0" layoutY="84.0" prefHeight="25.0" prefWidth="163.0" promptText="Mã sách" style="-fx-prompt-text-fill: #4059a9;" AnchorPane.bottomAnchor="129.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="314.0" AnchorPane.topAnchor="84.0">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="namebook" labelFloat="true" layoutX="21.0" layoutY="141.0" prefHeight="25.0" prefWidth="163.0" promptText="Tên sách" style="-fx-prompt-text-fill: #4059a9;" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="314.0">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="sell" labelFloat="true" layoutX="21.0" layoutY="192.0" onKeyPressed="#sell_keypress" prefHeight="28.0" prefWidth="70.0" promptText="Giá bán" style="-fx-prompt-text-fill: #4059a9;" AnchorPane.leftAnchor="21.0">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="buy" labelFloat="true" layoutX="114.0" layoutY="192.0" onKeyPressed="#buy_keypress" prefHeight="28.0" prefWidth="70.0" promptText="Giá mua" style="-fx-prompt-text-fill: #4059a9;" AnchorPane.rightAnchor="314.0">
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXComboBox fx:id="kind" labelFloat="true" layoutX="252.0" layoutY="82.0" prefHeight="25.0" prefWidth="189.0" promptText="Thể loại" styleClass="combobox" visibleRowCount="5" AnchorPane.bottomAnchor="129.0" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="82.0" />
+                  <Label layoutX="109.0" layoutY="22.0" styleClass="lablebook" text="THÔNG TIN NHẬP SÁCH" textFill="#3434cb" AnchorPane.bottomAnchor="184.0" AnchorPane.leftAnchor="109.0" AnchorPane.rightAnchor="108.0" AnchorPane.topAnchor="22.0" />
+                  <JFXComboBox fx:id="author" labelFloat="true" layoutX="252.0" layoutY="140.0" prefHeight="25.0" prefWidth="189.0" promptText="Tác giả" styleClass="combobox" visibleRowCount="5" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="57.0" />
+                  <JFXComboBox fx:id="publish" labelFloat="true" layoutX="252.0" layoutY="191.0" prefHeight="25.0" prefWidth="189.0" promptText="Nhà xuất bản" styleClass="combobox" visibleRowCount="5" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="57.0" />
+                  <Label fx:id="sellvalidation" layoutX="21.0" layoutY="225.0" prefHeight="17.0" prefWidth="70.0" textFill="RED" />
+                  <Label fx:id="buyvalidation" layoutX="114.0" layoutY="225.0" prefHeight="17.0" prefWidth="70.0" textFill="RED" />
+                  <Button fx:id="addkind" layoutX="441.0" layoutY="89.0" mnemonicParsing="false" onAction="#addkind_click" prefHeight="25.0" prefWidth="33.0" text="+" />
+                  <Button fx:id="addauthor" layoutX="441.0" layoutY="143.0" mnemonicParsing="false" onAction="#addauthor_click" prefHeight="25.0" prefWidth="33.0" text="+" />
+                  <Button fx:id="addpublish" layoutX="441.0" layoutY="194.0" mnemonicParsing="false" onAction="#addpublish_click" prefHeight="25.0" prefWidth="33.0" text="+" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="280.0" prefWidth="498.0" style="-fx-background-color: #BFF7C6;">
+               <children>
+                  <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="183.0" layoutY="87.0" onAction="#choose_click" prefHeight="55.0" prefWidth="57.0" styleClass="addbutton" text=" " AnchorPane.bottomAnchor="138.0" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="258.0" AnchorPane.topAnchor="87.0">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/ChoseImage.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <TextArea fx:id="decripbook" layoutX="324.0" layoutY="14.0" maxHeight="200.0" maxWidth="160.0" minHeight="200.0" minWidth="160.0" prefHeight="200.0" prefWidth="160.0" promptText="Mô tả" style="-fx-border-color: #E91AA7; -fx-border-width: 3;" wrapText="true" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="324.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </TextArea>
+                  <JFXButton contentDisplay="CENTER" layoutX="334.0" layoutY="232.0" onAction="#save_click" prefHeight="34.0" prefWidth="70.0" styleClass="addbutton" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Save.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" layoutX="254.0" layoutY="232.0" onAction="#delete_click" prefHeight="34.0" prefWidth="70.0" styleClass="deletebutton" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Recycle_30x30.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" layoutX="414.0" layoutY="232.0" onAction="#close_click" prefHeight="34.0" prefWidth="70.0" styleClass="updatebutton" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/X.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <ImageView fx:id="bookimage" fitHeight="200.0" fitWidth="160.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#bookimage_click" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="600.0" style="-fx-background-color: #BFF7C6;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_ThayDoiQuyDinhController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="46.0" layoutY="142.0" styleClass="lablebook" text="Số lượng nhập tối thiểu" textFill="BLUE" />
+      <Label layoutX="46.0" layoutY="183.0" styleClass="lablebook" text="Số lượng tồn tối đa" textFill="BLUE" />
+      <Label layoutX="46.0" layoutY="226.0" styleClass="lablebook" text="Số lượng tồn tối thiểu" textFill="BLUE" />
+      <Label layoutX="46.0" layoutY="270.0" styleClass="lablebook" text="Số tiền nợ tối đa" textFill="BLUE" />
+      <JFXCheckBox fx:id="quydinh4" layoutX="69.0" layoutY="341.0" selected="true" text="Số tiền thu không vượt quá số tiền nợ" textFill="BLUE">
+         <font>
+            <Font name="Tahoma Bold" size="24.0" />
+         </font>
+      </JFXCheckBox>
+      <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="399.0" onAction="#update_click" prefHeight="40.0" prefWidth="80.0" styleClass="addbutton" text=" " textFill="BLUE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/add_30x30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="CENTER" layoutX="139.0" layoutY="399.0" onAction="#defaultvalue_click" prefHeight="40.0" prefWidth="80.0" styleClass="updatebutton" text=" " textFill="BLUE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/update_50x50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="CENTER" layoutX="400.0" layoutY="399.0" onAction="#delete_click" prefHeight="40.0" prefWidth="80.0" styleClass="deletebutton" text=" " textFill="BLUE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/delete_30x30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TextField fx:id="SLNMin" alignment="CENTER_RIGHT" layoutX="344.0" layoutY="142.0" prefHeight="35.0" prefWidth="80.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="SLNMin1" alignment="CENTER_RIGHT" disable="true" layoutX="474.0" layoutY="142.0" prefHeight="35.0" prefWidth="80.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="SLTMax" alignment="CENTER_RIGHT" layoutX="344.0" layoutY="183.0" prefHeight="35.0" prefWidth="80.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="SLTMax1" alignment="CENTER_RIGHT" disable="true" layoutX="474.0" layoutY="183.0" prefHeight="35.0" prefWidth="80.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="SLTMin" alignment="CENTER_RIGHT" layoutX="344.0" layoutY="226.0" prefHeight="35.0" prefWidth="80.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="SLTMin1" alignment="CENTER_RIGHT" disable="true" layoutX="474.0" layoutY="226.0" prefHeight="35.0" prefWidth="80.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="STNMax" alignment="CENTER_RIGHT" layoutX="344.0" layoutY="270.0" prefHeight="35.0" prefWidth="80.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="STNMax1" alignment="CENTER_RIGHT" disable="true" layoutX="474.0" layoutY="270.0" prefHeight="35.0" prefWidth="80.0">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="463.0" layoutY="93.0" styleClass="lablebook" text="Hiện tại" textFill="BLUE" />
+      <Label layoutX="335.0" layoutY="93.0" styleClass="lablebook" text="Cập nhật" textFill="BLUE" />
+      <Label layoutX="192.0" layoutY="23.0" styleClass="lablebook" text="THAY ĐỔI QUY ĐỊNH" textFill="BLUE" />
+   </children>
+</AnchorPane>

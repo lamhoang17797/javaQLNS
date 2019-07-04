@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="461.0" prefWidth="556.0" style="-fx-background-color: #BFF7C6;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_InUpNguoiDungController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="111.0" layoutY="22.0" styleClass="lablebook" text="THÔNG TIN NGƯỜI DÙNG" textFill="#3434cb" />
+      <JFXTextField fx:id="iduser" editable="false" labelFloat="true" layoutX="285.0" layoutY="83.0" prefHeight="33.0" prefWidth="95.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="nameuser" labelFloat="true" layoutX="286.0" layoutY="132.0" prefHeight="33.0" prefWidth="264.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="emailuser" labelFloat="true" layoutX="286.0" layoutY="183.0" prefHeight="33.0" prefWidth="264.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="phoneuser" labelFloat="true" layoutX="309.0" layoutY="236.0" onKeyPressed="#phonecustomer_keypress" prefHeight="33.0" prefWidth="141.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="user" labelFloat="true" layoutX="309.0" layoutY="289.0" prefHeight="28.0" prefWidth="141.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="password" labelFloat="true" layoutX="309.0" layoutY="334.0" onKeyPressed="#phonecustomer_keypress" prefHeight="28.0" prefWidth="141.0">
+         <font>
+            <Font name="Tahoma" size="17.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="186.0" layoutY="88.0" text="Mã ND:" textFill="#3434cb">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="183.0" layoutY="137.0" text="Tên ND:" textFill="#3434cb">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="185.0" layoutY="188.0" text="Email:" textFill="#3434cb">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="185.0" layoutY="241.0" text="Điện thoại:" textFill="#3434cb">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="185.0" layoutY="294.0" text="Tên tài khoản:" textFill="#3434cb">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton contentDisplay="CENTER" layoutX="243.0" layoutY="400.0" onAction="#save_click" prefHeight="34.0" prefWidth="70.0" styleClass="addbutton" text=" ">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/Save.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="CENTER" layoutX="163.0" layoutY="400.0" onAction="#delete_click" prefHeight="34.0" prefWidth="70.0" styleClass="deletebutton" text=" ">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/Recycle_30x30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="CENTER" layoutX="323.0" layoutY="400.0" onAction="#close_click" prefHeight="34.0" prefWidth="70.0" styleClass="updatebutton" text=" ">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/X.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="chooseimage" buttonType="RAISED" contentDisplay="CENTER" layoutX="57.0" layoutY="252.0" onAction="#choose_click" prefHeight="55.0" prefWidth="57.0" styleClass="addbutton" text=" ">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/ChoseImage.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label fx:id="phonecustomervalidation" layoutX="285.0" layoutY="273.0" prefHeight="17.0" prefWidth="141.0" textFill="RED" />
+      <Label layoutX="188.0" layoutY="339.0" text="Mật khẩu:" textFill="#3434cb">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="384.0" layoutY="88.0" text="Quyền:" textFill="#3434cb">
+         <font>
+            <Font name="Tahoma" size="18.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="combo" layoutX="453.0" layoutY="87.0" prefHeight="25.0" prefWidth="95.0" />
+      <ImageView fx:id="userimage" fitHeight="150.0" fitWidth="150.0" layoutX="15.0" layoutY="85.0" onMouseClicked="#userimage_click" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

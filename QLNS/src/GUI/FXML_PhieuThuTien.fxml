@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="656.0" prefWidth="1379.0" style="-fx-background-color: #4AB3F5;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_PhieuThuTienController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="385.0" layoutY="20.0" styleClass="lablebook" text="PHIẾU THU TIỀN" textFill="#f7f7f8">
+         <font>
+            <Font name="Tahoma Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXTreeTableView fx:id="receipttable" layoutX="14.0" layoutY="152.0" onMouseClicked="#receipttable_click" prefHeight="482.0" prefWidth="822.0" />
+      <Label layoutX="1109.0" layoutY="20.0" styleClass="lablebook" text="KHÁCH HÀNG" textFill="#f7f7f8">
+         <font>
+            <Font name="Tahoma Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="1014.0" layoutY="80.0" styleClass="lablebook" text="Tìm kiếm:" textFill="#f7f7f8" />
+      <JFXTextField fx:id="searchname" labelFloat="true" layoutX="1137.0" layoutY="78.0" prefHeight="25.0" prefWidth="188.0" promptText="Tên khách hàng" style="-fx-prompt-text-fill: #f7f7f8;">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTreeTableView fx:id="customertable" layoutX="1013.0" layoutY="152.0" onMouseClicked="#customertale_click" prefHeight="482.0" prefWidth="318.0" />
+      <Label layoutX="67.0" layoutY="80.0" styleClass="lablebook" text="Ngày thu tiền:" textFill="#f7f7f8" />
+      <JFXDatePicker fx:id="day" defaultColor="#47f5e4" layoutX="239.0" layoutY="84.0" prefHeight="28.0" prefWidth="188.0" />
+      <Label layoutX="479.0" layoutY="81.0" styleClass="lablebook" text="Số tiền thu:" textFill="#f7f7f8" />
+      <TextField fx:id="money" layoutX="631.0" layoutY="78.0" prefHeight="25.0" prefWidth="188.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="addreceipt" disable="true" layoutX="858.0" layoutY="152.0" onAction="#addrecipt_click" prefHeight="39.0" prefWidth="134.0" style="-fx-background-color: #103AF7;" text="Lập phiếu" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="exportceipt" disable="true" layoutX="858.0" layoutY="210.0" onAction="#exportceipt_click" prefHeight="39.0" prefWidth="134.0" style="-fx-background-color: #103AF7;" text="Xuất phiếu" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

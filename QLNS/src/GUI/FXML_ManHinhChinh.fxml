@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_ManHinhChinhController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1366.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Hệ thống">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#changerule_menu" text="Thay đổi quy định" />
+                  <MenuItem mnemonicParsing="false" onAction="#user_menu" text="Thông tin tài khoản" />
+                  <MenuItem mnemonicParsing="false" onAction="#close_menu" text="Thoát" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Quản lý">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#book_menu" text="Quản lý sách" />
+                  <MenuItem mnemonicParsing="false" onAction="#customer_menu" text="Quản lý khách hàng" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Kinh doanh">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#export_menu" text="Lập phiếu nhập" />
+                  <MenuItem mnemonicParsing="false" onAction="#bill_menu" text="Lập hóa đơn" />
+                  <MenuItem mnemonicParsing="false" onAction="#receipt_menu" text="Lập phiếu thu" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Thống kê">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#report_book" text="Sách" />
+                  <MenuItem mnemonicParsing="false" onAction="#report_revenue" text="Doanh thu" />
+                  <MenuItem mnemonicParsing="false" onAction="#report_customer" text="Khách hàng" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <JFXToolbar layoutY="27.0" prefHeight="60.0" prefWidth="1366.0" style="-fx-border-color: #ccccb3;">
+         <left>
+            <HBox prefHeight="60.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="book" disable="true" onAction="#book_click" prefHeight="60.0" prefWidth="148.0" styleClass="toolbarbt" text="Quản lý sách">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Book_100x80.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="customer" disable="true" onAction="#customer_click" prefHeight="58.0" prefWidth="177.0" styleClass="toolbarbt" text="Quản lý khách hàng">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Customer_100x80.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="export" disable="true" onAction="#export_click" prefHeight="60.0" prefWidth="148.0" styleClass="toolbarbt" text="Lập phiếu nhập">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Export_100x80.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="bill" disable="true" onAction="#bill_click" prefHeight="60.0" prefWidth="148.0" styleClass="toolbarbt" text="Lập hóa đơn">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Bill_100x80.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="receipt" disable="true" onAction="#receipt_click" prefHeight="60.0" prefWidth="148.0" styleClass="toolbarbt" text="Lập phiếu thu">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/cash.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="report" disable="true" onAction="#report_click" prefHeight="60.0" prefWidth="148.0" styleClass="toolbarbt" text="Thống kê">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Report_100x80.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="user" disable="true" layoutX="779.0" layoutY="10.0" onAction="#user_click" prefHeight="60.0" prefWidth="148.0" styleClass="toolbarbt" text="Tài khoản">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/User-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </left>
+      </JFXToolbar>
+      <AnchorPane fx:id="rootpane" layoutY="87.0" prefHeight="680.0" prefWidth="1366.0">
+         <children>
+            <JFXButton fx:id="reportsach" buttonType="RAISED" layoutX="466.0" layoutY="246.0" onAction="#reportsach_click" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #31F1D1;" text="Báo cáo sách" visible="false">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="reportdoanhthu" buttonType="RAISED" layoutX="720.0" layoutY="246.0" onAction="#reportdoanhthu_click" prefHeight="60.0" prefWidth="185.0" style="-fx-background-color: #31F1D1;" text="Báo cáo doanh thu" visible="false">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="reportkhachhang" buttonType="RAISED" layoutX="581.0" layoutY="346.0" onAction="#reportkhachhang_click" prefHeight="60.0" prefWidth="205.0" style="-fx-background-color: #31F1D1;" text="Báo cáo khách hàng" visible="false">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

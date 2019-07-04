@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorInput?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="654.0" prefWidth="1366.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_QuanLyKhachHangController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="655.0" prefWidth="1366.0">
+         <left>
+            <VBox prefHeight="514.0" prefWidth="100.0" spacing="30.0" styleClass="borderpane" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton alignment="BOTTOM_CENTER" contentDisplay="TOP" onAction="#addcustomer_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Thêm KH" textFill="BLUE">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/AddCustomer_50x50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="updatecustomer" alignment="BOTTOM_CENTER" contentDisplay="TOP" disable="true" layoutX="10.0" layoutY="10.0" onAction="#updatecustomer_click" prefHeight="85.0" prefWidth="94.0" styleClass="bookcolor" text="Cập nhật" textFill="BLUE">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/UpdateCustomer_50x50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="deletecustomer" alignment="BOTTOM_CENTER" contentDisplay="TOP" disable="true" layoutX="10.0" layoutY="95.0" onAction="#deletecustomer_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Xóa KH" textFill="BLUE">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/DeleteCustomer_50x50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="180.0" onAction="#importcustomer_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Nhập KH" textFill="BLUE">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/ImportBook_50x50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                     <effect>
+                        <ColorInput />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="265.0" onAction="#exportcustomer_click" prefHeight="85.0" prefWidth="102.0" styleClass="bookcolor" text="Xuất KH" textFill="BLUE">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/ExportBook_50x50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Tahoma" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </VBox>
+         </left>
+         <right>
+            <VBox prefHeight="655.0" prefWidth="160.0" spacing="10.0" styleClass="borderpane" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="customerimage" fitHeight="200.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label text="Tên khách hàng" textFill="#0e12ee">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nametext" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Địa chỉ " textFill="#0e12ee">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addresstext" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Email" textFill="#0e12ee">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emailtext" layoutX="10.0" layoutY="281.0" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Số điện thoại" textFill="#0e12ee">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="phonetext" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+         </right>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <Label styleClass="lablebook" text="THÔNG TIN KHÁCH HÀNG" textFill="BLUE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Tahoma Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </top>
+               <bottom>
+                  <JFXTreeTableView fx:id="customertable" onKeyPressed="#customertable_keypress" onMouseClicked="#customertable_click" prefHeight="560.0" prefWidth="1100.0" BorderPane.alignment="CENTER" />
+               </bottom>
+               <center>
+                  <HBox prefHeight="36.0" prefWidth="1100.0" spacing="20.0" style="-fx-background-color: #5649a3;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label styleClass="lablebook" text="Tìm kiếm" textFill="#f7f7f8">
+                           <font>
+                              <Font name="Tahoma Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                        </Label>
+                        <JFXTextField fx:id="searchname" labelFloat="true" prefHeight="33.0" prefWidth="163.0" promptText="Tên khách hàng" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                           <font>
+                              <Font name="Tahoma Bold" size="17.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="searchaddress" labelFloat="true" prefHeight="33.0" prefWidth="180.0" promptText="Địa chỉ " style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                           <font>
+                              <Font name="Tahoma Bold" size="17.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="searchemail" labelFloat="true" prefHeight="33.0" prefWidth="174.0" promptText="email" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                           <font>
+                              <Font name="Tahoma Bold" size="17.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <padding>
+                        <Insets left="190.0" right="190.0" top="20.0" />
+                     </padding>
+                  </HBox>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

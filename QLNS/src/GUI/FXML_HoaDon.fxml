@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="656.0" prefWidth="1366.0" style="-fx-background-color: #4AB3F5;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXML_HoaDonController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <JFXHamburger fx:id="hamber" layoutX="945.0" layoutY="16.0" onMouseClicked="#hamber_click" />
+      <Label layoutX="1101.0" layoutY="16.0" styleClass="lablebook" text="HÓA ĐƠN" textFill="#f7f7f8">
+         <font>
+            <Font name="Tahoma Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXTreeTableView fx:id="detailbilltable" onKeyPressed="#detailbill_keypress" prefHeight="635.0" prefWidth="937.0" />
+      <JFXTreeTableView fx:id="billtable" layoutX="994.0" layoutY="160.0" onMouseClicked="#billtable_click" prefHeight="166.0" prefWidth="363.0" />
+      <Label layoutX="995.0" layoutY="64.0" text="Khách hàng:" textFill="#f7f7f8">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="customer" layoutX="1109.0" layoutY="65.0" onAction="#customer_click" onKeyPressed="#createbill_press" prefHeight="25.0" prefWidth="179.0" unFocusColor="RED" />
+      <Label layoutX="994.0" layoutY="104.0" text="Ngày lập:" textFill="#f7f7f8">
+         <font>
+            <Font name="Tahoma Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="day" defaultColor="#41ffec" layoutX="1107.0" layoutY="102.0" prefHeight="28.0" prefWidth="222.0" />
+      <Label layoutX="989.0" layoutY="356.0" text="Thành tiền:" textFill="#f7f7f8">
+         <font>
+            <Font name="Tahoma Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="990.0" layoutY="396.0" text="Tiền thu:" textFill="#f7f7f8">
+         <font>
+            <Font name="Tahoma Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="990.0" layoutY="439.0" text="Tiền thừa:" textFill="#f7f7f8">
+         <font>
+            <Font name="Tahoma Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="990.0" layoutY="491.0" text="F8:" textFill="RED">
+         <font>
+            <Font name="Tahoma Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="total" layoutX="1101.0" layoutY="354.0" prefHeight="27.0" prefWidth="135.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="changedue" layoutX="1101.0" layoutY="442.0" prefHeight="18.0" prefWidth="135.0" textFill="WHITE">
+         <font>
+            <Font name="Tahoma Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="990.0" layoutY="549.0" text="F12:" textFill="#00ff22">
+         <font>
+            <Font name="Tahoma Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="1056.0" layoutY="488.0" text="Lưu " textFill="#ee00ff">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="1084.0" layoutY="546.0" text="Xuất hóa đơn" textFill="#00ffdd">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="payment" alignment="CENTER_RIGHT" layoutX="1101.0" layoutY="389.0" onKeyPressed="#keypress" prefHeight="38.0" prefWidth="204.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="384.0" direction="RIGHT" layoutX="985.0" prefHeight="656.0" prefWidth="384.0" visible="false">
+         <children>
+            <Pane fx:id="pane" prefHeight="656.0" prefWidth="384.0" style="-fx-background-color: #5649a3;">
+               <children>
+                  <Label layoutX="80.0" layoutY="21.0" styleClass="lablebook" text="THÔNG TIN SÁCH" textFill="#f7f7f8">
+                     <font>
+                        <Font name="Tahoma Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="67.0" styleClass="lablebook" text="Tìm kiếm:" textFill="#f7f7f8">
+                     <font>
+                        <Font name="Tahoma Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="addbook" disable="true" layoutX="13.0" layoutY="361.0" onAction="#addbook_click" prefHeight="35.0" prefWidth="82.0" style="-fx-background-color: #322b59;" text="&lt;&lt;" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTreeTableView fx:id="booktable" disable="true" layoutX="110.0" layoutY="118.0" onMouseClicked="#booktable_click" prefHeight="520.0" prefWidth="252.0" />
+                  <JFXTextField fx:id="searchname" labelFloat="true" layoutX="136.0" layoutY="68.0" prefHeight="28.0" prefWidth="214.0" promptText="Tên sách" style="-fx-prompt-text-fill: #f7f7f8;" styleClass="jfx-text-field">
+                     <font>
+                        <Font name="Tahoma Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="15.0" layoutY="146.0" prefHeight="17.0" prefWidth="82.0" text="Số lượng" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="amount" alignment="CENTER_RIGHT" layoutX="13.0" layoutY="184.0" prefHeight="25.0" prefWidth="82.0" text="1" />
+                  <Label layoutX="16.0" layoutY="217.0" prefHeight="17.0" prefWidth="82.0" text="Giá bán" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="price" alignment="CENTER_RIGHT" layoutX="13.0" layoutY="251.0" prefHeight="25.0" prefWidth="82.0" text="0" />
+                  <Label layoutX="15.0" layoutY="287.0" prefHeight="17.0" prefWidth="82.0" text="Giảm giá" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="selloff" alignment="CENTER_RIGHT" layoutX="13.0" layoutY="322.0" prefHeight="25.0" prefWidth="82.0" text="0" />
+               </children>
+            </Pane>
+         </children></JFXDrawer>
+      <Label fx:id="searchbill" layoutX="1109.0" layoutY="96.0" visible="false" />
+      <Label fx:id="searchbillday" layoutX="1107.0" layoutY="137.0" visible="false" />
+   </children>
+</AnchorPane>
